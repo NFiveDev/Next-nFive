@@ -51,9 +51,9 @@ function DesktopNav() {
               <Link
                 href={item.ref}
                 key={index}
-                fontWeight={'medium'}
+                fontWeight={currPath === item.ref ? 'semibold' : 'medium'}
                 fontSize={'sm'}
-                textColor={currPath === item.ref ? 'teal.400' : 'gray.500'}
+                textColor={currPath === item.ref ? 'teal.500' : 'gray.500'}
                 _hover={{
                   textColor: 'gray.700'
                 }}
