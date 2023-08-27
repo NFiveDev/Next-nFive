@@ -9,16 +9,18 @@ import {
   Image,
   Divider,
   Center,
-  Link
+  Link,
 } from '@chakra-ui/react';
 import {} from '@chakra-ui/next-js';
 import LoginButton from './Buttons/LoginButton';
 import SignUpButton from './Buttons/SignUpButton';
 import Split from './Split';
+import { usePathname } from 'next/navigation'
+
+
 function MobileNav() {
   return <Box display={{ base: 'block', md: 'none' }}></Box>;
 }
-
 
 const Config = {
   links: [
@@ -33,29 +35,44 @@ const Config = {
     {
       title: 'About',
       ref: '/about',
-    }
-  ]
-}
+    },
+  ],
+};
 
 function DesktopNav() {
-  return <Box display={{ base: 'none', sm: 'none', md: 'block' }}>
-    <Flex>
-      <HStack>
-        {
-          Config.links.map(function(item, index) {
-            return <Link href={item.ref} key={index} >{item.title}</Link>
-          })
-        }
-      </HStack>
-    </Flex>
-  </Box>;
+  const currPath = usePathname();
+  console.log('NIKLAS', currPath)
+  return (
+    <Box paddingX={4} display={{ base: 'none', sm: 'none', md: 'block' }}>
+      <Flex>
+        <HStack spacing={4}>
+          {Config.links.map(function (item, index) {
+            return (
+              <Link
+                href={item.ref}
+                key={index}
+                fontWeight={'medium'}
+                fontSize={'sm'}
+                textColor={currPath === item.ref ? 'teal.400' : 'gray.500'}
+                _hover={{
+                  textColor: 'gray.700'
+                }}
+              >
+                {item.title}
+              </Link>
+            );
+          })}
+        </HStack>
+      </Flex>
+    </Box>
+  );
 }
 
 function NavWrapper() {
   return (
     <Box display={'flex'} alignItems={'center'}>
       <DesktopNav />
-      <Split display={{ base: 'none', md: 'block' }} height='2rem' />
+      <Split display={{ base: 'none', md: 'block' }} height="2rem" />
       <HStack marginStart={3} spacing={'1rem'}>
         <SignUpButton text="Sign Up" size="sm" />
         <LoginButton size="sm" text="Login" />
