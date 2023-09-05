@@ -10,6 +10,7 @@ import {
   Divider,
   Center,
   Link,
+  Button,
 } from '@chakra-ui/react';
 import {} from '@chakra-ui/next-js';
 import LoginButton from './Buttons/LoginButton';
@@ -19,7 +20,13 @@ import { usePathname } from 'next/navigation'
 
 
 function MobileNav() {
-  return <Box display={{ base: 'block', md: 'none' }}></Box>;
+  return (
+    <Box display={{ base: 'block', md: 'none' }}>
+      <Button>
+        
+      </Button>
+    </Box>
+  ) 
 }
 
 const Config = {
@@ -27,21 +34,23 @@ const Config = {
     {
       title: 'Courses',
       ref: '/course',
+      icon: ''
     },
     {
       title: 'Ressources',
       ref: '/ressource',
+      icon: ''
     },
     {
       title: 'About',
       ref: '/about',
+      icon: ''
     },
   ],
 };
 
 function DesktopNav() {
   const currPath = usePathname();
-  console.log('NIKLAS', currPath)
   return (
     <Box paddingX={4} display={{ base: 'none', sm: 'none', md: 'block' }}>
       <Flex>
