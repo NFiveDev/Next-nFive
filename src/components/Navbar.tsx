@@ -97,15 +97,16 @@ function MobileNav() {
           <DrawerHeader>
             <DrawerCloseButton />
           </DrawerHeader>
-          <DrawerBody>
-            <List spacing={3}>
+          <DrawerBody paddingY={5}>
+            <List spacing={4}>
               {Config.links.map(function (link) {
-                return <ListItem key={'key_' + link.title} display={'flex'} flexDirection={'row'} alignItems={'center'}>
-                  <ListIcon as={link.icon} color={'teal.500'}/>
-                  <Text >
+                return <ListItem key={'key_' + link.title} >
+                <Link href={link.ref} display={'flex'} flexDirection={'row'} alignItems={'center'}>
+                <ListIcon as={link.icon} color={'teal.500'}/>
+                  <Text fontSize={'lg'} fontWeight={'semibold'} color={'gray.700'}>
                     {link.title}
                   </Text>
-                  
+                </Link>
                 </ListItem>;
               })}
             </List>
