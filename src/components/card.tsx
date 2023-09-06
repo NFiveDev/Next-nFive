@@ -1,8 +1,17 @@
 'use client';
 
-import { Box, Card, CardHeader, Icon } from '@chakra-ui/react';
+import {
+  Box,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Icon,
+} from '@chakra-ui/react';
 import { ReactElement } from 'react';
-import {IconType} from 'react-icons'
+import { IconType } from 'react-icons';
+import {HiArrowTopRightOnSquare} from 'react-icons/hi2'
+import { Link } from '@chakra-ui/next-js';
 
 type DefaultProps = {
   title: string;
@@ -11,7 +20,10 @@ type DefaultProps = {
     element: IconType;
     bgColor?: string;
   };
-  link?: string;
+  link?: {
+    href: string,
+    displayText: string
+  };
 };
 
 function Default(props: DefaultProps) {
@@ -24,6 +36,12 @@ function Default(props: DefaultProps) {
       )}
 
       <CardHeader>{props.title}</CardHeader>
+      <CardBody>{props.content}</CardBody>
+      {props.link && (
+        <CardFooter>
+          <Link href={props.link.href}>{props.link.displayText} <HiArrowTopRightOnSquare /></Link>
+        </CardFooter>
+      )}
     </Card>
   );
 }
