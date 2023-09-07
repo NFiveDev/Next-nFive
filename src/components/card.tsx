@@ -12,12 +12,13 @@ import { ReactElement } from 'react';
 import { IconType } from 'react-icons';
 import {HiArrowTopRightOnSquare} from 'react-icons/hi2'
 import { Link } from '@chakra-ui/next-js';
+import { ReactIconsClientMapper } from './constants/icons_client';
 
 type DefaultProps = {
   title: string;
   content: string;
   iconConfig?: {
-    element: IconType;
+    element: string
     bgColor?: string;
   };
   link?: {
@@ -27,11 +28,19 @@ type DefaultProps = {
 };
 
 function Default(props: DefaultProps) {
+  let reactIcon: IconType | undefined;
+
+  if(props.iconConfig) {
+    reactIcon = ReactIconsClientMapper(props.iconConfig.element)
+  }
+  
+  
+
   return (
     <Card>
       {props.iconConfig && (
         <Box>
-          <Icon as={props.iconConfig.element} />
+          {reactIcon && <Icon as={reactIcon} />}
         </Box>
       )}
 
@@ -44,4 +53,9 @@ function Default(props: DefaultProps) {
       )}
     </Card>
   );
+}
+
+
+export {
+  Default as DefaultCard
 }

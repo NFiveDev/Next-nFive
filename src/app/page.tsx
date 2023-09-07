@@ -1,13 +1,18 @@
-import Image from 'next/image'
-import styles from './page.module.css'
 import { HeroSimple } from '@/components/Simple'
-import { Container } from '@chakra-ui/react'
+import { DefaultCard } from '@/components/card'
+import { GridSimple } from '@/components/layouts/grid'
+
+
 export default function Home() {
   return (
     <>
       <HeroSimple/>
-      <div style={{}}>
-
+      <div style={{maxWidth: '1280px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '5rem', paddingRight: '5rem'}}>
+        <GridSimple columns={3} spacing={10}>
+          <DefaultCard iconConfig={{element: "HiAcademicCap"}} title='Project Based Learning' content=''/>
+          <DefaultCard title='Project Based Learning' content=''/>
+          <DefaultCard title='Project Based Learning' content=''/>
+        </GridSimple>
       </div>
     </>
   )
