@@ -11,8 +11,8 @@ export default function LoginButton(props: LoginButtonProps) {
   return (
     <Button
       size={props.size}
-      bg={'pink.400'}
-      _hover={{ bg: 'pink.300'}}
+      bg={'blue.400'}
+      _hover={{ bg: 'blue.300'}}
       color={'white'}
       fontWeight={600}
       fontSize={'sm'}

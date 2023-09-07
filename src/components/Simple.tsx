@@ -23,7 +23,7 @@ function Simple(props: SimpleProps) {
           <Flex flexDirection={'column'}>
             <Heading
               fontWeight={'medium'}
-              textColor={'gray.600'}
+              textColor={'black'}
               py={'1rem'}
               textAlign={'center'}
               as={'h1'}
@@ -48,7 +48,7 @@ function Simple(props: SimpleProps) {
               <HStack spacing={'1rem'}>
                 <Button
                   rightIcon={<HiArrowRight />}
-                  colorScheme={'pink'}
+                  colorScheme={'blue'}
                   variant={'solid'}
                 >
                   Explore
