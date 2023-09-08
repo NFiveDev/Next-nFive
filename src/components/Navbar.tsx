@@ -27,6 +27,7 @@ import SignUpButton from './Buttons/SignUpButton';
 import Split from './Split';
 import { usePathname } from 'next/navigation';
 import { config } from 'process';
+import ThemeToggler from './themeToggle';
 
 const Config = {
   links: [
@@ -124,6 +125,7 @@ function NavWrapper() {
       alignItems={'center'}
       flexDirection={{ base: 'row', md: 'row' }}
     >
+      <ThemeToggler />
       <DesktopNav />
       <Split display={{ base: 'none', md: 'block' }} height="2rem" />
       <HStack marginStart={3} spacing={'1rem'}>
@@ -138,9 +140,11 @@ function NavWrapper() {
 function NavLogo() {
   return (
     <Flex justifyContent={'center'}>
-      <Box boxSize={'40px'}>
-        <Image src="/logo.png" alt="N5Logo" />
-      </Box>
+      <Link href='/'>
+        <Box boxSize={'40px'}>
+          <Image src="/logo.png" alt="N5Logo" />
+        </Box>
+      </Link>
     </Flex>
   );
 }
