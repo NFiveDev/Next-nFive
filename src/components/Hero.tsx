@@ -17,7 +17,7 @@ type SimpleProps = {};
 
 function Simple(props: SimpleProps) {
   return (
-    <Container px={'2rem'} maxW={'container.lg'} py={100}>
+    <Container px={'2rem'} maxW={'container.lg'} paddingTop={'10rem'} paddingBottom={10}>
       <Center height={'full'}>
         <VStack>
           <Flex flexDirection={'column'}>

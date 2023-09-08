@@ -34,7 +34,7 @@ type DefaultProps = {
 
 function Default(props: DefaultProps) {
   let reactIcon: IconType | undefined;
-  const reactIconSize = props.iconConfig?.size ? props.iconConfig?.size : 5;
+  const reactIconSize = props.iconConfig?.size ? props.iconConfig?.size : 4;
 
   if (props.iconConfig) {
     reactIcon = ReactIconsClientMapper(props.iconConfig.element);
@@ -58,7 +58,7 @@ function Default(props: DefaultProps) {
           )}
         </Stack>
       </CardHeader>
-      <CardBody paddingBottom={2}>
+      <CardBody paddingBottom={2} paddingTop={1}>
         <Stack spacing={2}>
           <Text
             as={'h4'}
