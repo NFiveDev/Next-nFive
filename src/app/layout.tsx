@@ -1,8 +1,14 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
+import { Providers } from './providers'
+import NavBar from '@/components/navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +21,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={openSans.className}>
+      <body className=''>
+        <Providers>
+          <header>
+            <NavBar />
+          </header>
+
+          {children}
+        </Providers>
+      </body>
     </html>
   )
 }
