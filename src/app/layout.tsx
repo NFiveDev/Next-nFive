@@ -21,14 +21,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={openSans.className}>
-      <body className=''>
+    <html lang="en" className={`${openSans.className} min-h-screen`}>
+      <body className='h-full'>
         <Providers>
           <header className='border-b-1 border-slate-200'>
             <NavBar />
           </header>
 
-          {children}
+          <div className='max-w-7xl mx-auto px-6 grow'>
+            {children}
+          </div>
+          <footer className='max-w-7xl mx-auto px-6'>
+            footer
+          </footer>
         </Providers>
       </body>
     </html>

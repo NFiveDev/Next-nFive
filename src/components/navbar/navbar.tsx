@@ -164,7 +164,7 @@ function NavBar() {
   const navProps = NavigationConfig;
 
   return (
-    <Navbar onMenuOpenChange={setMenuOpen} maxWidth={'xl'}>
+    <Navbar onMenuOpenChange={setMenuOpen} maxWidth={'xl'} className='px-0'>
       <NavbarBrand>
         <Link href='/' color='foreground'>
         <Image width={30} height={30} alt='brand' src={'/logo.png'} />
