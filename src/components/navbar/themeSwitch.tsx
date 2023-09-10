@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Switch } from "@nextui-org/react";
-import { useState, useEffect } from "react";
-import { HiSun, HiMoon } from "react-icons/hi2";
-import {useTheme} from "next-themes";
+import { Switch } from '@nextui-org/react';
+import { useState, useEffect } from 'react';
+import { HiSun, HiMoon } from 'react-icons/hi2';
+import {useTheme} from 'next-themes';
 
 function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);

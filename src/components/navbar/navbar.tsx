@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Image from "next/image";
-import ThemeSwitch from "./themeSwitch";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import ThemeSwitch from './themeSwitch';
 import {
   Navbar,
   NavbarBrand,
@@ -13,7 +13,7 @@ import {
   NavbarMenuItem,
   Link,
   Button,
-} from "@nextui-org/react";
+} from '@nextui-org/react';
 
 type INavigationConfig = {
   routes: Array<{ link: string; icon?: string; displayText: string }>;
@@ -55,19 +55,19 @@ function SignIn(props: { isMobile: boolean }) {
 const NavigationConfig: INavigationConfig = {
   routes: [
     {
-      link: "/course",
-      icon: "",
-      displayText: "courses",
+      link: '/course',
+      icon: '',
+      displayText: 'courses',
     },
     {
-      link: "/ressource",
-      icon: "",
-      displayText: "ressources",
+      link: '/ressource',
+      icon: '',
+      displayText: 'ressources',
     },
     {
-      link: "/about",
-      icon: "",
-      displayText: "about",
+      link: '/about',
+      icon: '',
+      displayText: 'about',
     },
   ],
   menuOpen: undefined,
@@ -77,7 +77,7 @@ function MobileNav(props: INavigationConfig) {
   return (
     <>
       <NavbarMenuToggle
-        aria-label={props.menuOpen ? "Close menu" : "Open menu"}
+        aria-label={props.menuOpen ? 'Close menu' : 'Open menu'}
         className="sm:hidden"
       />
       <NavbarMenu>
@@ -104,14 +104,14 @@ function DesktopNav(props: INavigationConfig) {
   return (
     <>
       
-      <NavbarContent className={"hidden sm:flex"} justify={"end"}>
+      <NavbarContent className={'hidden sm:flex'} justify={'end'}>
       <ThemeSwitch />
       <span className="border-s-1 w-1 h-3/5 border-gray-300"/>
       
         {NavigationConfig.routes.map((route) => {
           return (
-            <NavbarItem key={"k" + route.displayText}>
-              <Link color={"foreground"} href={route.link}>
+            <NavbarItem key={'k' + route.displayText}>
+              <Link color={'foreground'} href={route.link}>
                 <p className="text-sm text-slate-500">{route.displayText}</p>
               </Link>
             </NavbarItem>
@@ -132,9 +132,9 @@ function NavBar() {
   const navProps = NavigationConfig;
 
   return (
-    <Navbar onMenuOpenChange={setMenuOpen} maxWidth={"xl"}>
+    <Navbar onMenuOpenChange={setMenuOpen} maxWidth={'xl'}>
       <NavbarBrand>
-        <Image width={30} height={30} alt="brand" src={"/logo.png"} />
+        <Image width={30} height={30} alt="brand" src={'/logo.png'} />
         <p className="px-2 font-sans font-medium">
           N<span className="text-teal-500">Five</span> Courses
         </p>
