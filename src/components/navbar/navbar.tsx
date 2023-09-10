@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import ThemeSwitch from "./themeSwitch";
 import {
   Navbar,
   NavbarBrand,
@@ -102,7 +103,11 @@ function MobileNav(props: INavigationConfig) {
 function DesktopNav(props: INavigationConfig) {
   return (
     <>
+      
       <NavbarContent className={"hidden sm:flex"} justify={"end"}>
+      <ThemeSwitch />
+      <span className="border-s-1 w-1 h-3/5 border-gray-300"/>
+      
         {NavigationConfig.routes.map((route) => {
           return (
             <NavbarItem key={"k" + route.displayText}>
@@ -112,7 +117,7 @@ function DesktopNav(props: INavigationConfig) {
             </NavbarItem>
           );
         })}
-
+        <span className="border-s-1 w-1 h-3/5 border-gray-300"/>
         <div className="flex flex-row items-center gap-3 ps-2">
           <SignUp isMobile={false} />
           <SignIn isMobile={false} />
