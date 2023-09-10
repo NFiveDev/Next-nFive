@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" className={openSans.className}>
       <body className=''>
         <Providers>
-          <header>
+          <header className='border-b-1 border-slate-200'>
             <NavBar />
           </header>
 
