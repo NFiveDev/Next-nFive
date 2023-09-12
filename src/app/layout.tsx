@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Open_Sans, Inter } from 'next/font/google';
 import { Providers } from './providers';
 import NavBar from '@/components/navbar/navbar';
+import Footer from '@/components/footer';
 
 const openSans = Inter({
   subsets: ['latin'],
@@ -20,14 +21,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={`${openSans.className} h-full`}>
-      <body className='h-full'>
+    <html lang='en' className={`${openSans.className}`}>
+      <body className=''>
         <Providers>
-          <header className='border-b-1 border-slate-200'>
-            <NavBar />
-          </header>
-          <div className='max-w-7xl mx-auto px-6 grow'>{children}</div>
-          <footer className='max-w-7xl mx-auto px-6'>footer</footer>
+          <div className='min-h-screen flex flex-col items-start'>
+            <header className='border-b-1 border-slate-200 w-full'>
+              <NavBar />
+            </header>
+            <div className='grow w-full'>
+              <div className='max-w-7xl mx-auto px-6'>
+                {children}
+              </div>
+            </div>
+            <Footer/>
+          </div>
         </Providers>
       </body>
     </html>
