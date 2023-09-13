@@ -1,5 +1,11 @@
-import { Button } from '@nextui-org/react';
+'use client'
 
-export function ButtonDefault(){
-   return <Button></Button>
+import { Button, ButtonProps } from '@nextui-org/react';
+
+type ButtonDefaultProps = {
+   displayText: string;
+}
+
+export function ButtonDefault(props: ButtonDefaultProps & Partial<ButtonProps>){
+   return <Button {...props}>{props.displayText}</Button>
 }

@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang='en' className={`${openSans.className}`}>
       <body className=''>
         <Providers>
-          <div className='min-h-screen flex flex-col items-start bg-white'>
+          <div className='min-h-screen flex flex-col items-start bg-white dark:bg-slate-900'>
             <header className='border-b-1 border-slate-200 w-full'>
               <NavBar />
             </header>

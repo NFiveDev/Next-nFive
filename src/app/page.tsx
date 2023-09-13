@@ -1,5 +1,4 @@
-import { Button } from '@nextui-org/react'
-import Image from 'next/image'
+import { ButtonDefault } from '@/components/buttons'
 
 export default function Home() {
   return (
@@ -9,8 +8,8 @@ export default function Home() {
         <p className='text-slate-500 text-medium py-2 px-36'> 
           Discover the Future of Learning through Interactive Videos and Project-Based Courses. Join Our Inclusive Community, Where Aspiration Meets Expertise, Welcoming Learners of All Levels.
         </p>
-        <div>
-          
+        <div className=''>
+          <ButtonDefault displayText='hej' />
         </div>
       </div>
     </main>
