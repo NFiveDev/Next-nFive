@@ -3,9 +3,9 @@
 import { Button, ButtonProps } from '@nextui-org/react';
 
 type ButtonDefaultProps = {
-   displayText: string;
+   children: React.ReactNode
 }
 
 export function ButtonDefault(props: ButtonDefaultProps & Partial<ButtonProps>){
-   return <Button {...props}>{props.displayText}</Button>
+   return <Button {...props}>{props.children}</Button>
 }

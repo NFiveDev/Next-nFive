@@ -80,7 +80,7 @@ function SignIn(props: { isMobile: boolean }) {
   }
 
   return (
-    <Button size='sm' className='bg-pink-500 text-white font-semibold'>
+    <Button size='sm' className='bg-sky-500 text-white font-semibold'>
       Login
     </Button>
   );
