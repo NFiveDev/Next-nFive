@@ -1,6 +1,7 @@
 import { ButtonDefault } from '@/components/buttons';
 import { HiPlayCircle, HiAcademicCap } from 'react-icons/hi2';
 import { FeatureCard } from '@/components/cards';
+import { Link } from '@nextui-org/react';
 
 
 const featureSectionConfig = [
@@ -49,7 +50,7 @@ export default function Home() {
           Meets Expertise, Welcoming Learners of All Levels.
         </p>
         <div className='gap-4 flex py-5'>
-          <ButtonDefault color='primary' size='lg'>
+          <ButtonDefault color='primary' size='lg' be='link' href='/course'>
             Explore
           </ButtonDefault>
           <ButtonDefault
@@ -57,6 +58,7 @@ export default function Home() {
             variant='bordered'
             size='lg'
             className='gap-2'
+            
           >
             Intro
             <HiPlayCircle className='w-5 h-5 p-0 m-0' />
