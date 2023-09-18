@@ -46,7 +46,7 @@ export default function Home(props: HomeProps) {
   const showModal = props.searchParams?.modal;
 
   return (
-    <main className=''>
+    <main className='max-w-7xl mx-auto px-6'>
       <section className='flex flex-col items-center text-center pt-32 pb-28'>
         <h1 className='text-slate-800 dark:text-slate-400 text-6xl font-normal py-2'>
           Future of Learning in <span className='text-emerald-500 font-medium'>IT</span> and{' '}

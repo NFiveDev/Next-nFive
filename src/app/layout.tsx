@@ -29,9 +29,7 @@ export default function RootLayout({
               <NavBar />
             </header>
             <div className='grow w-full'>
-              <div className='max-w-7xl mx-auto px-6'>
                 {children}
-              </div>
             </div>
             <Footer/>
           </div>
