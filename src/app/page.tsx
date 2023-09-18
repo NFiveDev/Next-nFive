@@ -1,7 +1,9 @@
 import { ButtonDefault } from '@/components/buttons';
 import { HiPlayCircle, HiAcademicCap } from 'react-icons/hi2';
 import { FeatureCard } from '@/components/cards';
-import { Link } from '@nextui-org/react';
+import Link from 'next/link';
+
+import { IntroModal } from '@/components/modals';
 
 
 const featureSectionConfig = [
@@ -34,15 +36,21 @@ const featureSectionConfig = [
   }
 ]
 
+type HomeProps = {
+  searchParams: Record<string, string> | null | undefined;
+}
 
 
-export default function Home() {
+
+export default function Home(props: HomeProps) {
+  const showModal = props.searchParams?.modal;
+
   return (
     <main className=''>
       <section className='flex flex-col items-center text-center pt-32 pb-28'>
         <h1 className='text-slate-800 dark:text-slate-400 text-6xl font-normal py-2'>
-          Future of Learning in <span className='text-emerald-500'>IT</span> and{' '}
-          <span className='text-emerald-500'>Programming</span>
+          Future of Learning in <span className='text-emerald-500 font-medium'>IT</span> and{' '}
+          <span className='text-emerald-500 font-medium'>Programming</span>
         </h1>
         <p className='text-cyan-800 text-lg font-medium py-2 px-36 dark:text-cyan-400'>
           Discover the Future of Learning through Interactive Videos and
@@ -52,19 +60,12 @@ export default function Home() {
         <div className='gap-4 flex py-5'>
           <ButtonDefault color='primary' size='lg' be='link' href='/course'>
             Explore
-          </ButtonDefault>
-          <ButtonDefault
-            color='secondary'
-            variant='bordered'
-            size='lg'
-            className='gap-2'
-            
-          >
-            Intro
-            <HiPlayCircle className='w-5 h-5 p-0 m-0' />
-          </ButtonDefault>
+            </ButtonDefault>
+            <IntroModal />
         </div>
       </section>
+
+      
 
       <section className=''>
         <div className='grid grid-cols-3 gap-5 px-10'>
