@@ -47,12 +47,12 @@ export default function Home(props: HomeProps) {
 
   return (
     <main className='max-w-7xl mx-auto px-6'>
-      <section className='flex flex-col items-center text-center pt-32 pb-28'>
-        <h1 className='text-slate-800 dark:text-slate-400 text-6xl font-normal py-2'>
-          Future of Learning in <span className='text-emerald-500 font-medium'>IT</span> and{' '}
-          <span className='text-emerald-500 font-medium'>Programming</span>
+      <section className='flex flex-col items-center text-center py-36'>
+        <h1 className='text-slate-800 dark:text-slate-400 text-6xl font-normal font-base py-2'>
+          Future of Learning in <span className='text-emerald-500'>IT</span> and{' '}
+          <span className='text-emerald-500'>Programming</span>
         </h1>
-        <p className='text-cyan-800 text-lg font-medium py-2 px-36 dark:text-cyan-400'>
+        <p className='text-cyan-600 text-lg py-2 px-36 dark:text-cyan-400'>
           Discover the Future of Learning through Interactive Videos and
           Project-Based Courses. Join Our Inclusive Community, Where Aspiration
           Meets Expertise, Welcoming Learners of All Levels.
@@ -68,7 +68,7 @@ export default function Home(props: HomeProps) {
       
 
       <section className=''>
-        <div className='grid grid-cols-3 gap-5 px-10'>
+        <div className='grid grid-cols-3 gap-10'>
 
           {
             featureSectionConfig.map(function(feature, index){

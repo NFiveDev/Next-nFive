@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaTwitch } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className='w-full py-3'>
+    <footer className='w-full py-5'>
       <div className='max-w-7xl mx-auto px-6 flex flex-row-reverse'>
         <div className='flex flex-row gap-4 me-2'>
           <div className=''>
