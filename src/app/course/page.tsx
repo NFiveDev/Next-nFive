@@ -1,19 +1,33 @@
 import Image from 'next/image';
 import backgroundImage from '../../../public/banner-course.jpg';
+import { SearchForm } from '@/components/forms';
 
 export default function Course() {
   return (
     <>
-    <div className='relative h-96 w-screen'>
-      <div className='absolute w-full h-full'>
-        <Image src={backgroundImage} alt='Picture of the author' className=' h-full w-full object-cover'/>
-      </div>
+      <main>
+        <div className="relative w-screen">
+          <div className="absolute w-full h-96 bg-blend-darken">
+            <div className="bg-[url('/banner-course.jpg')] h-full bg-cover bg-center brightness-50 z-0">
 
-    </div>
-    <main className='max-w-7xl mx-auto px-6'>
+            </div>
+            {/* <Image
+              src={backgroundImage}
+              alt="Picture of the author"
+              className=" h-full w-full object-cover brightness-50 "
+            /> */}
+          </div>
+        </div>
 
-    </main>
+        <div className="relative max-w-7xl mx-auto px-6 z-10">
+          <div className="flex flex-col items-center py-14">
+            <h1 className="text-white text-4xl font-base font-sans">Explore our Courses</h1>
+            <div className='w-56 py-5'>
+              <SearchForm />
+            </div>
+          </div>
+        </div>
+      </main>
     </>
-      
   );
 }
