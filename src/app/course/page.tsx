@@ -22,8 +22,8 @@ export default function Course() {
         <div className="relative max-w-7xl mx-auto px-6 z-10">
           <div className="flex flex-col items-center py-14">
             <h1 className="text-white text-4xl font-base font-sans">Explore our Courses</h1>
-            <div className='w-56 py-5'>
-              <SearchForm />
+            <div className='w-72 py-5'>
+              <SearchForm placeholder='type to search...'/>
             </div>
           </div>
         </div>
