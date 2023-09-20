@@ -1,8 +1,12 @@
 import Image from 'next/image';
 import backgroundImage from '../../../public/banner-course.jpg';
-import { SearchForm } from '@/components/forms';
+import { CourseFilterForm, SearchForm } from '@/components/forms';
+import { CourseFilterToggler, IconButton } from '@/components/buttons';
+import {HiAdjustmentsHorizontal} from 'react-icons/hi2'
 
 export default function Course() {
+  const openModal = () => console.log(open)
+
   return (
     <>
       <main>
@@ -20,11 +24,22 @@ export default function Course() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 z-10">
-          <div className="flex flex-col items-center py-14">
-            <h1 className="text-white text-4xl font-base font-sans">Explore our Courses</h1>
-            <div className='w-72 py-5'>
+          <div className="flex flex-col items-center py-20">
+            <h1 className="text-slate-100 text-6xl font-normal font-base">Explore our Courses</h1>
+            <div className='w-80 py-8'>
               <SearchForm placeholder='type to search...'/>
             </div>
+          </div>
+          <div className='py-10 bg-white rounded-2xl w-full'>
+            <section className='flex items-end w-full flex-col px-5'>
+              <CourseFilterToggler><HiAdjustmentsHorizontal size={20} /></CourseFilterToggler>
+            </section>
+            <section className='w-full'>
+              <CourseFilterForm />
+            </section>
+            <section className=''>
+              <h1>hej</h1>
+            </section>
           </div>
         </div>
       </main>
