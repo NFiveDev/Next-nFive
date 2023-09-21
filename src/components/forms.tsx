@@ -56,7 +56,7 @@ export function CourseFilterForm() {
         action={''}
         className=" overflow-hidden"
       >
-        <section className="flex flex-row gap-x-5">
+        <section className="flex flex-row gap-x-6">
           <div className="flex flex-col flex-1">
             <h4 className="text-base font-light py-2">Programming Language</h4>
             <Checkbox size="sm">
@@ -113,11 +113,13 @@ export function CourseFilterForm() {
             <Divider orientation="vertical" />
           </div>
           <div className="w-48">
-            <Select
+          <h4 className="text-base font-light py-2">Culture & Level</h4>
+          <div className='py-2'>
+          <Select
               color="secondary"
               size="sm"
               label="select language..."
-              className="max-w-xs"
+              className="max-w-xs mt-2"
             >
               <SelectItem key={'da-DK'} startContent={<Avatar src={''} />}>
                 Danish
@@ -127,9 +129,26 @@ export function CourseFilterForm() {
               </SelectItem>
             </Select>
           </div>
+          <div className='pb-4'>
+          <Select
+              color="secondary"
+              size="sm"
+              label="select language..."
+              className="max-w-xs mt-2"
+            >
+              <SelectItem key={'da-DK'} startContent={<Avatar src={''} />}>
+                Danish
+              </SelectItem>
+              <SelectItem key={'en-GB'} startContent={<Avatar src={''} />}>
+                English
+              </SelectItem>
+            </Select>
+          </div>
+            
+          </div>
         </section>
         
-          <Button type="submit" color="primary" variant="solid" className="float-right">
+          <Button type="submit" color="primary" variant="solid" className="float-right mt-3">
             Apply
           </Button>
         
