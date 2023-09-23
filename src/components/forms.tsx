@@ -152,9 +152,9 @@ export function CourseFilterForm() {
                     label="select level..."
                     className="max-w-xs mt-3"
                   >
-                    <SelectItem key={'da-DK'}>beginner</SelectItem>
-                    <SelectItem key={'en-GB'}>novice</SelectItem>
-                    <SelectItem key={'en-GB'}>advanced</SelectItem>
+                    <SelectItem key={'beg'}>beginner</SelectItem>
+                    <SelectItem key={'nov'}>novice</SelectItem>
+                    <SelectItem key={'adv'}>advanced</SelectItem>
                   </Select>
                 </div>
               </div>
