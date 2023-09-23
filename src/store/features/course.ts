@@ -14,8 +14,6 @@ export const CourseSlice = createSlice({
   reducers: {
     toggleFilter: state => {
       state.filterFormOpen = !state.filterFormOpen;
-      console.log('TOGGLE CALLED')
-      console.log(state.filterFormOpen)
     },
   },
 });
