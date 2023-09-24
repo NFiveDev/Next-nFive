@@ -29,13 +29,13 @@ export default function RegisterForm() {
         required_error: 'you must specify username',
         invalid_type_error: 'only enter a name',
       })
-      .min(8)
-      .max(16)
+      .min(8, 'Minimum eight characters')
+      .max(16, 'Maximum sixteen characters')
       .regex(
         new RegExp(
           '^[a-z0-9_-]{3,15}$^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$'
         ),
-        'Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character'
+        'At least one upper case English letter, one lower case English letter, one number and one special character'
       ),
     email: z.string().min(6).max(30).regex(new RegExp('[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+'), 'non valid email'),
   });
