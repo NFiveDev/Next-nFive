@@ -1,6 +1,6 @@
-import connectDB from '@/database/connect';
-import { CourseModel } from '@/database/models';
-import type { ICourse } from '@/database/models/models';
+import connectDB from '@database/connect';
+import { CourseModel } from '@database/models';
+import type { ICourse } from '@database/models/models';
 
 export default function CourseService() {
 

@@ -1,6 +1,6 @@
 'use client';
 
-import useCourse from '@/hooks/useCourse';
+import {useCourse} from '@hooks';
 import { Button, ButtonProps, Link } from '@nextui-org/react';
 import { Children } from 'react';
 import { IconType } from 'react-icons';

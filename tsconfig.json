@@ -19,7 +19,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@store/*": ["./src/store/*"],
+      "@hooks": ["./src/hooks"],
+      "@components/*": ["./src/components/*"],
+      "@database/*": ["./src/database/*"],
       "@Services": ["./src/services"]
     }
   },

@@ -1,9 +1,9 @@
-import { ButtonDefault } from '@/components/buttons';
+import { ButtonDefault } from '@components/buttons';
 import { HiPlayCircle, HiAcademicCap } from 'react-icons/hi2';
-import { FeatureCard } from '@/components/cards';
+import { FeatureCard } from '@components/cards';
 import Link from 'next/link';
 
-import { IntroModal } from '@/components/modals';
+import { IntroModal } from '@components/modals';
 
 
 const featureSectionConfig = [
