@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import backgroundImage from '../../../public/banner-course.jpg';
-import { CourseFilterForm, SearchForm } from '@/components/forms';
-import { CourseFilterToggler, IconButton } from '@/components/buttons';
+import { CourseFilterForm, SearchForm } from '@components/forms';
+import { CourseFilterToggler, IconButton } from '@components/buttons';
 import {HiAdjustmentsHorizontal} from 'react-icons/hi2'
 
 export default function Course() {

@@ -11,7 +11,7 @@ import {
   Select,
   SelectItem,
 } from '@nextui-org/react';
-import useCourse from '@/hooks/useCourse';
+import {useCourse} from '@hooks';
 
 type SearchFormProps = {
   placeholder?: string;

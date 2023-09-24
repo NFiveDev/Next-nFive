@@ -48,7 +48,7 @@ const NavigationConfig: INavigationConfig = {
 function SignUp(props: { isMobile: boolean }) {
   if (props.isMobile) {
     return (
-      <Link size='lg' color='success' href='/signup'>
+      <Link size='lg' color='success' href='/user/register'>
         Sign up
       </Link>
     );
@@ -59,7 +59,7 @@ function SignUp(props: { isMobile: boolean }) {
       size='sm'
       underline='always'
       color='foreground'
-      href='/signup'
+      href='/user/register'
       className='whitespace-nowrap'
     >
       Sign up
