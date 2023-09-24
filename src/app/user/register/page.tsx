@@ -54,7 +54,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <div className='w-3/12 mx-auto mt-40 border-2 border-slate-300 rounded-lg p-11 shadow-xl'>
+    <div className='w-3/12 mx-auto mt-40 border-2 border-slate-200 rounded-lg p-10 shadow-md '>
       <div className='text-center'>
         <h1 className='text-3xl font-bold pb-6'>Sign up</h1>
       </div>
