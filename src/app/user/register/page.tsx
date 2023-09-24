@@ -13,6 +13,8 @@ export default function RegisterForm() {
 
   const [error, setError] = useState('');
 
+  const [isLoading, setIsLoading] = useState(false)
+
   const registerSchema = z.object({
     username: z
       .string({
