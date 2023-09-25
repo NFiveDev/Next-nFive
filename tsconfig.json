@@ -19,6 +19,7 @@
       }
     ],
     "paths": {
+      "@common/*":["./src/common/*"],
       "@store/*": ["./src/store/*"],
       "@hooks": ["./src/hooks"],
       "@components/*": ["./src/components/*"],

@@ -1,25 +1,5 @@
-// import { z } from 'zod';
+export const passwordValidation = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.* ).{8,16}$/;
 
-// type ValidationResult = {
-//   valid: boolean;
-//   msg?: string;
-// };
+export const usernameValidation = /^[a-z0-9_-]{3,15}$/;
 
-// export enum ValidateType {
-//   USER_NAME,
-// }
-
-// export function Validator() {
-//   const userName = (input: string) => {
-//     const validated = <
-//   };
-
-//   function Validate(input: string, action: ValidateType): ValidationResult {
-//     switch (action) {
-//       case ValidateType.USER_NAME:
-//         return userName();
-//       default:
-//         return { valid: true };
-//     }
-//   }
-// }
+export const emailValidation = /[^@ \t\r\n]+@[^@ \t\r\n]+.[^@ \t\r\n]+/;

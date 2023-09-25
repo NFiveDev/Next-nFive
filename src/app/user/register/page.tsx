@@ -2,7 +2,18 @@
 
 import { Button, Input } from '@nextui-org/react';
 import { useState } from 'react';
-import { z } from 'zod';
+import { ZodError, z } from 'zod';
+import {
+  emailValidation,
+  passwordValidation,
+  usernameValidation,
+} from '@common/validators';
+
+type RegisterFormError = {
+  usernameErrorMsg?: string;
+  emailErrorMsg?: string;
+  passwordErrorMsg?: string
+}
 
 export default function RegisterForm() {
   const [formData, setFormData] = useState<{
@@ -11,9 +22,9 @@ export default function RegisterForm() {
     password?: string;
   }>({});
 
-  const [error, setError] = useState('');
+  const [formError, setformError] = useState<RegisterFormError>({});
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   const registerSchema = z.object({
     username: z
@@ -21,35 +32,40 @@ export default function RegisterForm() {
         required_error: 'you must specify username',
         invalid_type_error: 'only enter a name',
       })
-      .min(8)
+      .min(4)
       .max(16)
-      .regex(new RegExp('^[a-z0-9_-]{3,15}$')),
+      .regex(usernameValidation, 'Enter a valid username'),
     password: z
       .string({
         required_error: 'you must specify username',
         invalid_type_error: 'only enter a name',
       })
-      .min(8, 'Minimum eight characters')
-      .max(16, 'Maximum sixteen characters')
-      .regex(
-        new RegExp(
-          '^[a-z0-9_-]{3,15}$^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$'
-        ),
-        'At least one upper case English letter, one lower case English letter, one number and one special character'
-      ),
-    email: z.string().min(6).max(30).regex(new RegExp('[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+'), 'non valid email'),
+      .regex(passwordValidation),
+    email: z.string({
+      required_error: 'you must specify an email'
+    }).min(6).max(30).regex(emailValidation, 'non valid email'),
   });
 
   function submitHandler(e: any) {
     e.preventDefault();
 
     try {
+      console.log(formData);
       registerSchema.parse(formData);
       // If the data is valid, submit the form
-    } catch (error: unknown) {
-      // If the data is invalid, display an error message
-      console.log(error);
-      setError('');
+    } catch (error: any) {
+      if (error instanceof z.ZodError) {
+        let currentError: RegisterFormError = {};
+        error.errors.forEach((validationError) => {
+          if (validationError.path[0].toString() === 'username') currentError.usernameErrorMsg = validationError.message;
+
+          if (validationError.path[0].toString() === 'email') currentError.emailErrorMsg = validationError.message;
+
+          if (validationError.path[0].toString() === 'password') currentError.passwordErrorMsg = validationError.message;
+
+          if(currentError) setformError(currentError);
+        });
+      }
     }
   }
 
@@ -58,7 +74,7 @@ export default function RegisterForm() {
       <div className='text-center'>
         <h1 className='text-3xl font-bold pb-6'>Sign up</h1>
       </div>
-      
+
       <form onSubmit={submitHandler} className='flex flex-col gap-y-6 '>
         <Input
           label='Username'
@@ -77,7 +93,7 @@ export default function RegisterForm() {
               ? true
               : false
           }
-          errorMessage={error}
+          errorMessage={formError.usernameErrorMsg}
         />
         <Input
           name='email'
@@ -94,7 +110,7 @@ export default function RegisterForm() {
               ? true
               : false
           }
-          errorMessage={error}
+          errorMessage={formError.emailErrorMsg}
           label='Email'
           placeholder='enter your email'
         />
@@ -114,10 +130,18 @@ export default function RegisterForm() {
               ? true
               : false
           }
-          errorMessage={error}
+          errorMessage={formError.passwordErrorMsg}
           placeholder='key for login'
         />
-        <Button size='lg' variant='solid' color='success' type='submit' className='text-white font-semibold'>Create Account</Button>
+        <Button
+          size='lg'
+          variant='solid'
+          color='success'
+          type='submit'
+          className='text-white font-semibold'
+        >
+          Create Account
+        </Button>
       </form>
     </div>
   );
